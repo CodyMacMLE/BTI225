@@ -72,10 +72,10 @@ let produceItemDB = {
             }
        }
        console.log(`Produce Items in Supermarket: ${supermarketObj.name} (count: ${supermarketProduce.length})\n\n`);
-       for (let i = 0; i < supermarketProduce.lenth; i++)
+       for (let i = 0; i < supermarketProduce.length; i++)
        {
-        console.log(`Produce Item ${supermarketProduce[i].PLUCode}: ${supermarketProduce[i].name}, ${supermarketProduce[i].type}, /$${supermarketProduce[i].price} (per ${supermarketProduce[i].unit})\n`);
-        console.log(`Date modified: ${supermarketProduce[i].modified}\n\n`);
+            console.log(`Produce Item ${supermarketProduce[i].PLUCode}: ${supermarketProduce[i].name}, ${supermarketProduce[i].type}, $${supermarketProduce[i].price} (per ${supermarketProduce[i].unit})\n`);
+            console.log(`Date modified: ${supermarketProduce[i].modified}\n\n`);
        }
     },
     printProduceItemsByType: function(produceType) {
@@ -183,9 +183,9 @@ console.log("-----------------------------");
 
 // print all produceItems by produce type "Fruits"
 
-//console.log("produceItemDB.printProduceItemsByType('Fruits');\n-----------------------------");
-//produceItemDB.printProduceItemsByType('Fruits');
-//console.log("-----------------------------");
+console.log("produceItemDB.printProduceItemsByType('Fruits');\n-----------------------------");
+produceItemDB.printProduceItemsByType('Fruits');
+console.log("-----------------------------");
 
 // remove ProduceItem "Apples fresh & generic" (PLUCode 3000) and "Pears General"(PLUCode 3016)
 
