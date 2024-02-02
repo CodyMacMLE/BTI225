@@ -79,10 +79,29 @@ let produceItemDB = {
        }
     },
     printProduceItemsByType: function(produceType) {
-        
+        let produceItems = [];
+        for (let i = 0; i < this.produceItems.length; i++)
+        {
+            if (this.produceItems[i].type == produceType)
+            {
+                produceItems.push(this.produceItems[i]);
+            }
+        }
+        console.log(`Produce Items by produce type: ${produceType} (count: ${produceItems.length})\n\n`);
+        for (let i = 0; i < produceItems.length; i++)
+        {
+            console.log(`Produce Item ${produceItems[i].PLUCode}: ${produceItems[i].name}, ${produceItems[i].type}, $${produceItems[i].price} (per ${produceItems[i].unit})\n`);
+            console.log(`Date modified: ${produceItems[i].modified}\n\n`);
+         }
     },
     removeProduceItemByCode(PLUCode) {
-
+        for (let i = 0; i < this.produceItems.length; i++)
+        {
+            if (this.produceItems[i].PLUCode == PLUCode)
+            {
+                this.produceItems.splice(i, 1);
+            }
+        }
     },
     addAddress: function(addressObj) {
         this.addresses.push(addressObj);
@@ -106,7 +125,20 @@ let produceItemDB = {
         }
     },
     removeAddressById: function(addressId) {
-
+        for (let i = 0; i < this.addresses.length; i++)
+        {
+            if (this.addresses[i].addressId == addressId)
+            {
+                let exists = false;
+                for (let j = 0; j < this.supermarkets.length; j++)
+                {
+                    if (this.supermarkets[j].addressId == addressId)
+                        exists = true;
+                }
+                if (!exists)
+                this.addresses.splice(i, 1)
+            }
+        }
     },
     addSupermarket: function(supermarketObj) {
         this.supermarkets.push(supermarketObj);
@@ -189,28 +221,28 @@ console.log("-----------------------------");
 
 // remove ProduceItem "Apples fresh & generic" (PLUCode 3000) and "Pears General"(PLUCode 3016)
 
-//console.log("produceItemDB.removeProduceItemByCode('3000');\nproduceItemDB.removeProduceItemByCode('3016');\n");
-//produceItemDB.removeProduceItemByCode("3000");
-//produceItemDB.removeProduceItemByCode("3016");
-//console.log("-----------------------------");
+console.log("produceItemDB.removeProduceItemByCode('3000');\nproduceItemDB.removeProduceItemByCode('3016');\n");
+produceItemDB.removeProduceItemByCode("3000");
+produceItemDB.removeProduceItemByCode("3016");
+console.log("-----------------------------");
 
 // print all produceItems again
 // NOTE: "Apples fresh & generic" and "Pears General" should be missing
 
-//console.log("produceItemDB.printAllProduceItems();\n-----------------------------");
-//produceItemDB.printAllProduceItems();
-//console.log("-----------------------------");
+console.log("produceItemDB.printAllProduceItems();\n-----------------------------");
+produceItemDB.printAllProduceItems();
+console.log("-----------------------------");
 
 
 // remove Address "67 Rhymer Ave., Stouffville, ON L3C8H4" (addressId 2000) and "165 Yorkland Blvd, Toronto, ON M2J4R2" (AddressId 2024)
-//console.log("produceItemDB.removeAddressById(2000);\nproduceItemDB.removeAddressById(2024);\n");
-//produceItemDB.removeAddressById(2000);
-//produceItemDB.removeAddressById(2024);
-//console.log("-----------------------------");
+console.log("produceItemDB.removeAddressById(2000);\nproduceItemDB.removeAddressById(2024);\n");
+produceItemDB.removeAddressById(2000);
+produceItemDB.removeAddressById(2024);
+console.log("-----------------------------");
 
 // print all addresses again
 // NOTE: only "Address 2000: 67 Rhymer Ave., Stouffville, ON L3C8H4" should be removed
 
-//console.log("produceItemDB.printAllAddresses();\n-----------------------------");
-//produceItemDB.printAllAddresses();
-//console.log("-----------------------------");
+console.log("produceItemDB.printAllAddresses();\n-----------------------------");
+produceItemDB.printAllAddresses();
+console.log("-----------------------------");
