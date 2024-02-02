@@ -48,7 +48,8 @@ let produceItemDB = {
         }
     },
     addProduceItem: function(produceItemObj) {
-        produceItemObj.modified = new Date().toLocaleString();
+        produceItemObj.modified = new Date();
+        produceItemObj.modified = produceItemObj.modified.toUTCString();
         this.produceItems.push(produceItemObj);
     },
     printProduceItemByCode: function(Code) {
