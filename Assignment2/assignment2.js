@@ -38,12 +38,12 @@ let produceItemDB = {
     loadData: function(allData) {
         for (let i = 0; i < allData.length; i++)
         {
-            if (allData.type == "supermarket") {
-                addSupermarket(allData[i].data);
-            } else if (allData.type == "produceItem") {
-                addProduceItem(allData[i].data);
-            } else if (allData.type == "address") {
-                addAddress(allData[i].data);
+            if (allData[i].type == "supermarket") {
+                this.addSupermarket(allData[i].data);
+            } else if (allData[i].type == "produceItem") {
+                this.addProduceItem(allData[i].data);
+            } else if (allData[i].type == "address") {
+                this.addAddress(allData[i].data);
             }
         }
     },
@@ -53,13 +53,80 @@ let produceItemDB = {
     },
     printProduceItemByCode: function(Code) {
         let current = this.produceItems.PLUCode.findIndex(Code);
-        console.log(`Produce Item ${Code}: ${this.produceItems[current].name}, ${this.produceItems[current].type}, ${this.produceItems[current].price} (per ${this.produceItems[current].unit})\n
-            Date Modified: ${this.produceItems[current].modified}`);
+        console.log(`Produce Item ${Code}: ${this.produceItems[current].name}, ${this.produceItems[current].type}, $${this.produceItems[current].price} (per ${this.produceItems[current].unit})\nDate Modified: ${this.produceItems[current].modified}`);
     },
     printAllProduceItems: function() {
+        console.log(`All Produce Items (count: ${this.produceItems.length})\n\n`);
         for (let i = 0; i < this.produceItems.length; i++) {
-            console.log(`Produce Item ${this.produceItems[i].PLUCode}: ${this.produceItems[i].name}, ${this.produceItems[i].type}, ${this.produceItems[i].price} (per ${this.produceItems[i].unit})\n
-                Date Modified: ${this.produceItems[i].modified}`);
+            console.log(`Produce Item ${this.produceItems[i].PLUCode}: ${this.produceItems[i].name}, ${this.produceItems[i].type}, $${this.produceItems[i].price} (per ${this.produceItems[i].unit})\nDate Modified: ${this.produceItems[i].modified}\n`);
+        }
+    },
+    printProduceItemsBySupermarket: function(supermarketId) {
+       let supermarketProduce = [];
+       let supermarketObj = this.getSupermarketById(supermarketId);
+       for (let i = 0; i < this.produceItems.length; i++)
+       {
+            if (this.produceItems[i].supermarketId == supermarketId)
+            {
+                supermarketProduce.push(this.produceItems[i]);
+            }
+       }
+       console.log(`Produce Items in Supermarket: ${supermarketObj.name} (count: ${supermarketProduce.length})\n\n`);
+       for (let i = 0; i < supermarketProduce.lenth; i++)
+       {
+        console.log(`Produce Item ${supermarketProduce[i].PLUCode}: ${supermarketProduce[i].name}, ${supermarketProduce[i].type}, /$${supermarketProduce[i].price} (per ${supermarketProduce[i].unit})\n`);
+        console.log(`Date modified: ${supermarketProduce[i].modified}\n\n`);
+       }
+    },
+    printProduceItemsByType: function(produceType) {
+        
+    },
+    removeProduceItemByCode(PLUCode) {
+
+    },
+    addAddress: function(addressObj) {
+        this.addresses.push(addressObj);
+    },
+    getAddressById: function(addressIdInput) {
+        let addressObj = {};
+        for (let i = 0; i < this.addresses.length; i++)
+        {
+            if (this.addresses[i].addressId == addressIdInput)
+            {
+                addressObj = this.addresses[i];
+            }
+        }
+        return addressObj;
+    },
+    printAllAddresses: function() {
+        const arrLen = this.addresses.length;
+        console.log(`All Addressees (count: ${arrLen})\n`);
+        for (let i = 0; i < arrLen; i++) {
+            console.log(`Address ${this.addresses[i].addressId}: ${this.addresses[i].street}, ${this.addresses[i].city}, ${this.addresses[i].province}, ${this.addresses[i].postalCode}\n`);
+        }
+    },
+    removeAddressById: function(addressId) {
+
+    },
+    addSupermarket: function(supermarketObj) {
+        this.supermarkets.push(supermarketObj);
+    },
+    getSupermarketById: function(supermarketId) {
+        for (let i = 0; i < this.supermarkets.length; i++)
+        {
+            if (this.supermarkets[i].supermarketId == supermarketId)
+            {
+                return this.supermarkets[i];
+            }
+        }
+    },
+    printAllSupermarkets: function() {
+        const arrLen = this.supermarkets.length;
+        console.log(`All Supermarkets (count: ${arrLen})\n\n`);
+        for (let i = 0; i < arrLen; i++) {
+            let addressObj = this.getAddressById(this.supermarkets[i].addressId);
+            console.log(`Supermarket ${this.supermarkets[i].supermarketId}: ${this.supermarkets[i].name}\n`);
+            console.log(`Location (${addressObj.addressId}): ${addressObj.street}, ${addressObj.city}, ${addressObj.province}, ${addressObj.postalCode}\n\n`);
         }
     }
 };
@@ -98,21 +165,21 @@ console.log("-----------------------------");
 
 // print all addresses
 
-//console.log("produceItemDB.printAllAddresses();\n-----------------------------");
-//produceItemDB.printAllAddresses();
-//console.log("-----------------------------");
+console.log("produceItemDB.printAllAddresses();\n-----------------------------");
+produceItemDB.printAllAddresses();
+console.log("-----------------------------");
 
 // print all supermarkets
 
-//console.log("produceItemDB.printAllSupermarkets();\n-----------------------------");
-//produceItemDB.printAllSupermarkets();
-//console.log("-----------------------------");
+console.log("produceItemDB.printAllSupermarkets();\n-----------------------------");
+produceItemDB.printAllSupermarkets();
+console.log("-----------------------------");
 
 // print all produceItems in supermarket "Loblaws Bayview Village" (supermarketId 222)
 
-//console.log("produceItemDB.printProduceItemsBySupermarket(222);\n-----------------------------");
-//produceItemDB.printProduceItemsBySupermarket(222);
-//console.log("-----------------------------");
+console.log("produceItemDB.printProduceItemsBySupermarket(222);\n-----------------------------");
+produceItemDB.printProduceItemsBySupermarket(222);
+console.log("-----------------------------");
 
 // print all produceItems by produce type "Fruits"
 
