@@ -1,8 +1,10 @@
-/*************************************
- *          ALL DATA                 *
- *  write your produceItemDB Object  *
- *      BELOW this Object            *
- *************************************/
+/********************************************************************************** 
+* BTI225 – Assignment 02* 
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+* Name: Cody MacDonald Student ID: 159702232 Date: February 2nd, 2024
+*********************************************************************************/
 
 var allData = [
     { type: "supermarket", data: { supermarketId: 222, name: "Loblaws Bayview Village", addressId: 1453, website: "https://www.loblaws.ca/" } },
@@ -163,28 +165,6 @@ let produceItemDB = {
         }
     }
 };
-
-
-/*  Write your produceItemDB Object Here.  Do not forget to uncomment the "TEST DATA" section
-    when you're ready.  Your code is required to run against these tests before you submit */
-
-
-/*************************************
- *          TEST DATA                *
- *  write your produceItemDB Object  *
- *      ABOVE this code              *
- *                                   *
- *  Uncomment this block of code     *
- *  when you're ready to test        *
- *  your produceItemDB Object        *
- *                                   *
- *  You MUST Hand in your code       *
- *  with the test data               *
- *  uncommented, as this will        *
- *  help check your code for         *
- *  correctness                      *
- *************************************/
-
 
 // Insert all Data into the Database
 
