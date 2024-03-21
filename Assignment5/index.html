@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Change this to your name-->
+    <meta name="author" content="Your Name" />
+
+    <title>Amazonian Prime</title>
+    <!-- Classless CSS Stylesheet - https://oxal.org/projects/sakura/ -->
+    <link rel="stylesheet" href="./css/sakura.css" type="text/css" />
+    <link rel="stylesheet" href="./css/site.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
+  </head>
+  <body>
+    <header>
+      <!-- Change this to your App's info -->
+      <h1>Amazonian Prime</h1>
+      <div>
+        <img src="./images/shopping.png" alt="shopping center" />
+      </div>
+      <p>
+        <span><b>Discover Primeval Deals: Amazonian Prime!</b></span><br><br>
+        Meet the river of convenience! Dive into a vast ecosystem 
+        of unbeatable deals, explore the lush variety of products, 
+        and experience the thrill of Primeval shopping. With lightning-fast 
+        delivery and customer service as sturdy as the ancient trees, we're 
+        your ultimate destination for all things primeval and prime!
+      </p>
+    </header>
+
+    <nav id="menu">
+      <!-- Dynamically create your menu buttons here -->
+      <button id="show-all">All Products</button>
+      <button id="show-clothing">Clothing</button>
+      <button id="show-womens-clothing">Women&#39;s Clothing</button>
+      <button id="show-mens-clothing">Men&#39;s Clothing</button>
+      <button id="show-jewelry">Jewelry</button>
+      <button id="show-electronics">Electronics</button>
+      <button id="show-top3">Top 3 by (hi/lo) Price</button>
+    </nav>
+
+    <hr />
+
+    <main>
+      <h2 id="selected-product-category">
+        <!-- Dynamically update the selected member category title -->
+      </h2>
+      <div class="product-grid">
+        <div class="card">
+          <img src=".\images\81fPKd-2AYL._AC_SL1500_.jpg" alt="Backpack"/>
+          <h2 class="card-title">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h2>
+          <p class="card-details">
+            <b>Category: </b>men's clothing<br>
+            <b>Rating: </b>3.9<br>
+            <b>Price: </b><span class="card-price">$109.95</span><br>
+          </p>
+          <button class="card-show-description">See Description &rarr;</button>
+          <p class="card-description">
+            <b>Description: </b> Your perfect pack for everyday use and walks in the forest. 
+            Stash your laptop (up to 15 inches) in the padded sleeve, your everyday
+          </p>
+          <button class="card-hide-description">Hide</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      &copy; 2024 Cody MacDonald
+    </footer>
+
+    <!-- JavaScript Data Files -->
+    <script src="./js/products-data.js"></script>
+
+    <!-- Main App JavaScript File -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
