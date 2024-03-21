@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C. MacDonald</title>
+</head>
+<body>
+
+<h1>BTI225 – Week 5</h1>
+
+<h2>Suggested Readings:</h2>
+<ol>
+  <li> &nbsp; <a href="http://developer.mozilla.org/en-US/docs/Web/HTML">HTML: HyperText Markup Language on MDN</a></li>
+  <li> &nbsp; <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">HTML Basics</a></li>
+  <li> &nbsp; <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML">Learning HTML: Guides and Tutorials</a></li>
+</ol>
+
+<h2>Code Editor</h2>
+For our code editor, we will be using Visual Studio Code, which is a free (open source) code editor <br>
+created and maintained by Microsoft. It also works on Windows, macOS, and Linux. Make sure you <br>
+have downloaded and installed it on all the computers you will use for web development.
+
+<h2>Web Client</h2>
+
+For our web client we will use the many web browsers we introduced in Week 1, namely: <br>
+<ul>
+  <li>Google Chrome for desktop and Android</li>
+  <li>Microsoft Edge and Internet Explorer (IE)</li>
+  <li>Apple Safari and Safari for iOS</li>
+  <li>Mozilla Firefox</li>
+  <li>Opera</li>
+</ul>
+
+<h2>Web Server</h2>
+We will also need a <b>web server</b> to host our web pages and applications. Installing and running a web <br>
+server can be complicated.<br><br>
+For our purposes, we will use a simple node.js based http-server. Now start the web server by<br>
+running the following command: <code>npx http-server.</code> <br><br>
+<code>http://127.0.0.1:8080</code> means connect using HTTP to my local computer on port 8080. <br><br>
+When you are done testing your web site, stop the web server by pressing <code>CTRL-C</code> in your terminal <br><br>
+To run the server again, use <code>npx http-server.</code><br><br>
+<b>NOTE:</b> <i>the second IP address will be different than the above, but 127.0.0.1 will always be correct.</i>
+
+<h2>Basic <mark>HTML5 Document</mark></h2>
+Here’s a basic HTML5 web page: <br>
+<pre>
+  &lt;!doctype html&gt;
+  &lt;html&gt;
+      &lt;head&gt;
+          &lt;meta charset="utf-8"&gt;
+          &lt;title&gt;My Web Page&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;!-- This is a comment --&gt;
+          &lt;h1&gt;Hello World!&lt;/h1&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+Every time we update anything in our web page, we have to refresh the web page in our browser. The web <br>
+server will serve the most recent version of the file on disk when it is requested.<br><br>
+<img src="./1677513797382.jpg" alt="Seneca College" style="width: 800px; height: 300px">
+</body>
+</html>

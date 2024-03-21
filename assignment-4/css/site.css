@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* 1 */
+main {
+  max-height: 1000px;
+  overflow: scroll;
+}
+
+/* 2 */
+body header h1 {
+  color: rgb(0, 168, 225);
+}
+
+/* 3 */
+#menu {
+  background-color: rgb(0, 168, 225);
+}
+body footer {
+  background-color: rgb(0, 168, 225);
+}
+
+/* 4 */
+body header p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body header p span{
+  font-size: 25px;
+}
+
+/* 5 */
+#selected-product-category {
+  text-align: center;
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+/* 6 */
+.main-table thead{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* 7 */
+footer {
+  position: absolute;
+  left: 0px;
+  width: 99vw;
+  height: 200px;
+  padding-left: 5px;
+}
+
+/* 8 */
+.details span {
+  font-weight: bold;
+  background-color: rgb(121, 213, 255);
+}
